@@ -1,4 +1,5 @@
-<p align="center">
+
+
   <img src="torus_proof.jpg" width="500" alt="Kadri Dimensional Decoupling Proof">
 </p>
 

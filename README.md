@@ -1,3 +1,4 @@
+
 # UnifiedGeoPinEngine v2.0: Dynamic Torus & Dimensional Decoupling Framework
 
 ### Founder & Theoretical Designer: Mohamed Talal Kadri
@@ -15,7 +16,7 @@ Any unauthorized academic plagiarizing, rebranding, or deployment of these conce
 
 ## 🚀 Overview: Breaking the Einsteinian Cage
 
-The **UnifiedGeoPinEngine v2.0** is a high-performance Python-based topological simulation designed to challenge and replace the standard, decaying paradigms of modern astrophysics (ΛCDM and general relativity). 
+The **UnifiedGeoPinEngine v2.0** is a high-performance Python-based topological simulation designed to challenge and replace the standard, decaying paradigms of modern astrophysics ($\Lambda\text{CDM}$ and general relativity). 
 
 While conventional academia patches its failing cosmic models with unobservable, mathematical "fudge factors" like **Dark Matter** and **Dark Energy** (accounting for 95% of their unknown universe), this engine provides a clean, rigorous alternative based purely on **Fractal Proxies** and **Toroidal Geometry**.
 
@@ -30,10 +31,23 @@ While conventional academia patches its failing cosmic models with unobservable,
 
 The engine operates on exact parametric equations of a dynamic torus combined with non-linear decoupling matrices, completely eliminating the need for Dark Energy parameters:
 
-$$X = (R + r_{dynamic} \cdot \cos(v)) \cdot \cos(u) \cdot \text{cosmic\_scale}$$
-$$Y = (R + r_{dynamic} \cdot \cos(v)) \cdot \sin(u) \cdot \text{cosmic\_scale}$$
-$$Z = r_{dynamic} \cdot \sin(v)$$
+$$X = (R + r_{\text{dynamic}} \cdot \cos(v)) \cdot \cos(u) \cdot \text{cosmic\_scale}$$
+$$Y = (R + r_{\text{dynamic}} \cdot \cos(v)) \cdot \sin(u) \cdot \text{cosmic\_scale}$$
+$$Z = r_{\text{text{dynamic}}} \cdot \sin(v)$$
 
+### 🌌 The Decoupling Fundamental Equation (معادلة انفكاك الأبعاد)
+
+Based on the topological boundaries of the Kadri Torus, the structural transition of spacetime is governed by the absolute logic of dimensional separation:
+
+$$(4 - 1 = 3) \implies \text{The Free Temporal Manifestation } (= 1)$$
+
+*   **The Total State (4):** Represents the classical 4D spacetime continuum before boundary interface contact.
+*   **The Temporal Exit (-1):** The absolute detachment of the temporal dimension, which flows independently as a free vector into the Antipodal Mirror Space.
+*   **The Spatial Core (3):** The remaining 3 spatial dimensions left without a local temporal engine, causing light to lose its classic velocity and propagation vectors. This structural fatigue is detected by instruments as the **Cosmological Redshift**.
+
+---
+
+## 📐 Parameters Map
 *   **Fractal Proxy Ratio ($\tau_U / \tau_J = 7$):** Derived from the local planetary orbital resonance (Uranus 84 / Jupiter 12), mapping how localized macro-systems mirror the grand cosmic architecture.
 *   **Topological Shift Vector ($\Delta H = 6$):** Derived directly from the Hubble Tension ($73 \text{ km/s/Mpc local} - 67 \text{ deep}$). This is not a measurement error; it is the exact kinetic rate of the dimensional separation between the Observable and Antipodal universes.
 

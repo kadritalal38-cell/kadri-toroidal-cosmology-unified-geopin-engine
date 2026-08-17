@@ -4,38 +4,31 @@ from matplotlib.animation import FuncAnimation
 
 class UnifiedGeoPinEngine:
     def __init__(self):
-        # حقوق الملكية الفكرية والتوثيق القانوني الصارم لمنع الاقتباس أو السرقة العلمية
         self.author = "Mohamed Talal Kadri"
         self.title = "Philosophical Researcher in Free Space & Topological Cosmology"
         self.copyright = "© 2026 Mohamed Talal Kadri. All Rights Reserved."
         self.legal_warning = "WARNING: Intellectual Property of Mohamed Talal Kadri. Unauthorized academic plagiarizing or use without explicit attribution is strictly prohibited."
         
-        # النسب المرجعية كأجزاء تمثيلية طوبولوجية (Fractal Proxies)
         self.tau_U = 84.0  
         self.tau_J = 12.0  
-        self.local_ratio = self.tau_U / self.tau_J  # النسبة الهندسية = 7
+        self.local_ratio = self.tau_U / self.tau_J  
         
-        # إحداثيات انزياح هابل الطوبولوجي الديناميكي
         self.hubble_local = 73.0
         self.hubble_deep = 67.0
-        self.temporal_shift = self.hubble_local - self.hubble_deep  # معامل الإزاحة = 6
+        self.temporal_shift = self.hubble_local - self.hubble_deep  
         
-        # كائنات الرسم لمنع الـ Global Variables
         self.quiver_forward = None
         self.quiver_backward = None
+        self.scatter_obs = None
+        self.scatter_anti = None
 
     def calculate_dimensional_decoupling(self, frame):
-        """
-        حساب انفكاك البعد الزمني عن الأبعاد المكانية عند الحدود الفاصلة للتوروس.
-        الضوء ينفك عن أبعاده الفضائية تدريجياً مما يضعف طيفه ويظهر كـ انزياح نحو الأحمر.
-        """
         cosmic_scale = 1.0 + 0.15 * np.sin(frame * 0.02)
         decoupling_factor = np.clip(1.0 - 0.2 * np.abs(np.sin(frame * 0.03)), 0.1, 1.0)
         dynamic_ktc = self.local_ratio * cosmic_scale * decoupling_factor
         return cosmic_scale, dynamic_ktc, decoupling_factor
 
     def verify_invariants(self):
-        """عرض التوثيق القانوني والبيان الفلسفي الهندسي للنموذج"""
         print("=" * 100)
         print(f"THE KADRI TOROIDAL CONSTANT (KTC) ENGINE - VERSION 2.0")
         print(f"FOUNDER : {self.author} ({self.title})")
@@ -45,11 +38,10 @@ class UnifiedGeoPinEngine:
         print(f"[-] Toroidal Structural Base Ratio    : {self.local_ratio} (Geometrical Framework Proxy)")
         print(f"[-] Topological Redshift Shift Vector : {self.temporal_shift} (Dimensional Separation Parameter)")
         print(f"[-] Anti-Einstein Massless Fallacy    : Photons and Meteors slide purely via spatial-temporal")
-        print(f"                                        vector flows within the Torus, NOT via mass/weight weights.")
+        print(f"                                        vector flows within the Torus, NOT via mass/weight.")
         print("-" * 100)
 
     def run_torus_simulation(self):
-        """تجسيد مجسم التوروس (Torus) ثلاثي الأبعاد لتفعيل وتوضيح فكرة الانزلاق الطردي"""
         fig = plt.figure(figsize=(12, 10))
         ax = fig.add_subplot(111, projection='3d')
         ax.set_axis_off()
@@ -57,38 +49,34 @@ class UnifiedGeoPinEngine:
         fig.patch.set_facecolor('#020205')
         ax.set_facecolor('#020205')
 
-        # هندسة بناء مجسم التوروس (Parametric Torus Equations)
-        R = 12  # نصف قطر التوروس الأكبر
+        R = 12  
         u_val = np.linspace(0, 2 * np.pi, 45)
         v_val = np.linspace(0, 2 * np.pi, 45)
         u, v = np.meshgrid(u_val, v_val)
 
-        # نقاط فضاء العرض (الكون المشهود مقابل الكون المرآتي المتعاكس)
         galaxy_u = np.array([0, np.pi/2, np.pi, 3*np.pi/2])
         galaxy_v = np.array([np.pi/4, np.pi/2, 3*np.pi/4, np.pi])
-        
-        plt.legend(loc='upper right', facecolor='#0b0b12', edgecolor='cyan', labelcolor='white')
 
         def update(frame):
+            nonlocal self
             ax.view_init(elev=22 + 4 * np.sin(frame*0.01), azim=frame * 0.4)
             
             if self.quiver_forward: self.quiver_forward.remove()
             if self.quiver_backward: self.quiver_backward.remove()
+            if self.scatter_obs: self.scatter_obs.remove()
+            if self.scatter_anti: self.scatter_anti.remove()
             
             cosmic_scale, current_ktc, decoupling = self.calculate_dimensional_decoupling(frame)
-            r_dynamic = 3.5 * (1.0 + 0.08 * np.cos(frame * 0.04))  # نصف القطر الأصغر للتوروس (التنفس الهندسي)
+            r_dynamic = 3.5 * (1.0 + 0.08 * np.cos(frame * 0.04))  
             
-            # إسقاط مجسم التوروس رياضياً في الفضاء ثلاثي الأبعاد
             X = (R + r_dynamic * np.cos(v)) * np.cos(u) * cosmic_scale
             Y = (R + r_dynamic * np.cos(v)) * np.sin(u) * cosmic_scale
             Z = r_dynamic * np.sin(v)
             
-            ax.collections.clear()  # تصفية الذاكرة الفورية لضمان سرعة المحاكاة كالصاروخ
+            ax.collections.clear()  
             
-            # رسم سطح التوروس الكوني الشفاف لبيان بنية الاندماج والانزلاق
             ax.plot_surface(X, Y, Z, cmap='coolwarm', edgecolor='none', alpha=0.12)
             
-            # حساب مواقع الأجرام والضوء داخل مجسم التوروس
             X1 = (R + r_dynamic * np.cos(galaxy_v)) * np.cos(galaxy_u) * cosmic_scale
             Y1 = (R + r_dynamic * np.cos(galaxy_v)) * np.sin(galaxy_u) * cosmic_scale
             Z1 = r_dynamic * np.sin(galaxy_v)
@@ -97,20 +85,17 @@ class UnifiedGeoPinEngine:
             Y2 = (R + r_dynamic * np.cos(galaxy_v + np.pi)) * np.sin(galaxy_u + np.pi) * cosmic_scale
             Z2 = r_dynamic * np.sin(galaxy_v + np.pi)
             
-            ax.scatter(X1, Y1, Z1, color='gold', s=150, depthshade=False, label='Observable Space (3D)')
-            ax.scatter(X2, Y2, Z2, color='magenta', s=150, depthshade=False, label='Antipodal Space (Mirror)')
+            self.scatter_obs = ax.scatter(X1, Y1, Z1, color='gold', s=150, depthshade=False, label='Observable Space (3D)')
+            self.scatter_anti = ax.scatter(X2, Y2, Z2, color='magenta', s=150, depthshade=False, label='Antipodal Space (Mirror)')
             
-            # سريان البعد الزمني المنفك عن الأبعاد المكانية بين دفتي التوروس
             time_factor = np.sin(frame * 0.03 * self.temporal_shift) * decoupling
             
             dx1, dy1, dz1 = (X2 - X1) * time_factor * 0.22, (Y2 - Y1) * time_factor * 0.22, (Z2 - Z1) * time_factor * 0.22
             dx2, dy2, dz2 = (X1 - X2) * time_factor * 0.22, (Y1 - Y2) * time_factor * 0.22, (Z1 - Z2) * time_factor * 0.22
             
-            # متجهات التدفق الطوبولوجي (الانزلاق المرغم طردياً دون حاجة لأوزان كتلية)
             self.quiver_forward = ax.quiver(X1, Y1, Z1, dx1, dy1, dz1, color='cyan', length=1.1, normalize=False, linewidth=2)
             self.quiver_backward = ax.quiver(X2, Y2, Z2, dx2, dy2, dz2, color='orange', length=1.1, normalize=False, linewidth=2)
             
-            # إبراز فكرتك الفلسفية وتوثيق ملكيتك في عنوان الشاشة بوضوح
             ax.set_title(
                 f"GeoPin Engine v2.0: Dynamic Torus Framework\n"
                 f"Author: {self.author} | {self.copyright}\n"
@@ -119,7 +104,9 @@ class UnifiedGeoPinEngine:
                 color='white', fontsize=9, fontfamily='monospace'
             )
             
-            return self.quiver_forward, self.quiver_backward
+            return self.quiver_forward, self.quiver_backward, self.scatter_obs, self.scatter_anti
+
+        ax.legend(loc='upper right', facecolor='#0b0b12', edgecolor='cyan', labelcolor='white')
 
         ani = FuncAnimation(fig, update, frames=np.arange(0, 360, 2), interval=40, blit=False)
         plt.show()
